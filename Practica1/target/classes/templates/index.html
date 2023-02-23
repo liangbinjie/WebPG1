@@ -8,31 +8,31 @@
         <header th:replace="layout/plantilla :: header"></header>
             
         <div th:if="${estados != null and !estados.empty}">
-            <h2>Listado de estados</h2>
+            <h1>Listado de estados</h1>
             <table border="1">
                 <thead>
                     <tr>
-                        
-                    <th>Nombre del estado</th>
-                    <th>Provincias</th>
-                    <th>Costas</th>
-                    <th>Población</th>
-                    
+                        <th>Nombre del estado</th>
+                        <th>Provincias</th>
+                        <th>Costas</th>
+                        <th>Población</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                
                 <tbody>
                 <tr th:each="estado: ${estados}">
-                <td>[[${estado.nombreEstado}]]</td>
-                <td>[[${estado.numProvincias}]]</td>
-                <td>[[${estado.costas}]]</td>
-                <td>[[${estado.poblacion}]]</td>
-                <td><a th:href="@{/estado/eliminar/} + ${estado.idEstado}">Eliminar</a>
-                <a th:href="@{/estado/eliminar/} + ${estadoidEstado}">Modificar</a></td>
-            </tr>
+                    <td>[[${estado.nombreEstado}]]</td>
+                    <td>[[${estado.numProvincias}]]</td>
+                    <td th:if="${estado.costas}">Si tiene</td>
+                    <td th:if="${!estado.costas}">No tiene</td>
+                    <td>[[${estado.poblacion}]]</td>
+                    <td><a th:href="@{/estado/eliminar/} + ${estado.idEstado}">Eliminar</a> | 
+                    <a th:href="@{/estado/modificar/} + ${estado.idEstado}">Modificar</a></td>
+                </tr>
                 </tbody>
- 
             </table>
+        </div>
         <div th:if="${estados == mull or estados.empty}">
             <h1>No hay datos que mostrar</h1>
         </div>

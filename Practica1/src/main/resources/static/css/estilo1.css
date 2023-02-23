@@ -1,0 +1,79 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(152, 152, 0);
+    padding: 10px
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    padding: 20px;
+}
+
+a:hover {
+    color: red;
+}
+
+li a {
+    color: white;
+}
+
+h1, th, td {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 10vh
+}
+
+table th {
+    padding: 10px 20px;
+    background-color: rgb(255, 197, 73);
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* MODIFICAR */
+
+form {
+    margin: 100px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+label {
+    display: block;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+}

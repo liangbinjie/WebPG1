@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
+
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head th:replace="layout/plantilla :: head">
     </head>
+    
     <body>
         <header th:replace="layout/plantilla :: header"/>
+        
+        <form th:action="@{/estado/guardar}"
+              method="post"
+              th:object="${estado}">
+            <input type="hidden" name="idEstado" th:field="*{idEstado}"/>
+            <label>Nombre Estado</label>
+            <input type="text" 
+                   name="nombreEstado"
+                   required="true"
+                   th:field="*{nombreEstado}"/>
+            <br>
+            <label>Cantidad Provincias</label>
+            <input type="number" 
+                   min="1"
+                   name="numProvincias"
+                   required="true"
+                   th:field="*{numProvincias}"/>
+            <br>
+            <label>Poblacion</label>
+            <input type="number" 
+                   min="0"
+                   name="poblacion"
+                   required="true"
+                   th:field="*{poblacion}"/>
+            <br>
+            <label>Tiene costas</label>
+            <input type="checkbox" 
+                   name="costas"
+                   th:field="*{costas}"/>
+            <br>
+            <hr>
+            <input type="submit" value="Guardar" name="guardar" />
+            <hr>
+            
+        </form>
+        <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>

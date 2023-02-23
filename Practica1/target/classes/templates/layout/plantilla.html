@@ -5,14 +5,15 @@
         <title>Practica 1</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../../static/estilo1.css" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/estilo1.css}" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:fragment="header">
             <nav>
+                <img th:src="@{/logo.png}" alt="" width="60px"/>
                 <ul>
-                    <li><a href="../modifica_estado.html">Agregar</a></li>
-                    <li><a href="../modifica_estado.html">Modificar</a></li>
+                    <li><a th:href="@{/}">Inicio</a></li>
+                    <li><a th:href="@{/estado/nuevo/}">Agregar</a></li>
                 </ul>
             </nav>
         </header>

@@ -23,7 +23,7 @@ public class EstadoController {
         return "index";
     }
     
-    @GetMapping("/estado/nuevo")
+    @GetMapping("/estado/nuevo/")
     public String estadoNuevo(Estado estado) {
         return "modifica_estado";
     }
@@ -40,6 +40,7 @@ public class EstadoController {
         return "redirect:/";
     }
     
+//    @Autowired
     @GetMapping("/estado/modificar/{idEstado}")
     public String estadoModificar(Estado estado, Model model) {
         estado = estadoService.getEstado(estado);
