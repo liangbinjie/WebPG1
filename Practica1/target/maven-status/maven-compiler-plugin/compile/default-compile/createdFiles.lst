@@ -1,6 +1,0 @@
-com\practica1\domain\Estado.class
-com\practica1\Practica1Application.class
-com\practica1\service\EstadoService.class
-com\practica1\controller\EstadoController.class
-com\practica1\service\impl\EstadoServiceImpl.class
-com\practica1\dao\EstadoDao.class
