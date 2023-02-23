@@ -9,6 +9,8 @@ drop user 'usuario_practica';estado
 create schema practica;
 
 create user 'usuario_practica'@'%' identified by 'la_Clave';
+grant all privileges on techshop.* to 'usuario_practica'@'%';
+flush privileges;
 
 create table practica.estado(
 	id_estado INT NOT NULL auto_increment,
