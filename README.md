@@ -2,7 +2,7 @@
 Practica grupal 1 Web
 
 
-1. 
+1. MySQL Database table creation
 ```
 drop schema practica;
 drop user 'usuario_practica';estado
@@ -24,7 +24,7 @@ COLLATE = utf8mb4_eo_0900_ai_ci;
 INSERT INTO practica.estado (id_estado, nombre_estado, num_provincias, costas, poblacion) VALUES 
 (1, 'Costa Rica', 7, TRUE, 5000000);
 ```
-2. 
+2. Application Properties
 ```
 server.port = 91
 
@@ -34,3 +34,61 @@ spring.datasource.password=la_Clave
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 ```
+
+3. Thymeleaf
+```
+th:fragment="fragment_name"
+th:replace="layout/location :: fragment_name"
+th:src="@{/source.type}"
+th:href="@{/ref.place}"
+th:if="${something}"
+th:action="@{/action/mapping}"
+th:field="*{objectAttribute}"
+```
+
+4. Steps
+```
+1. Domain
+@Data
+@Entity
+@Table(name="tablename")
+implements Serializable
+private static final long serialVersionUID = 1L
+@Id
+@Generatedvalue(Strategy = GenerationType.IDENTITY)
+Attributes, getters, setters, constructor
+
+2. Dao
+interface -> extends JpaRepository <domain, Long>
+
+3. Service <-> ServiceImpl
+interface -> ServiceImpl functions
+
+4. ServiceImpl <-> Service
+@Service
+implements Service
+@Autowired
+private dao
+
+@Override
+@Transactional
+functions
+
+5. Controller
+@Controller
+@Slf4j
+class
+@Autowired
+private Service
+@Mapping -> Post/Get
+model
+```
+
+JpaRepository cheetcode:
+```
+dao.findById(getId()).orElse(null)
+dao.save()
+dao.delete()
+dao.findAll() -> List
+```
+
