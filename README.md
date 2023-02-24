@@ -5,7 +5,7 @@ Practica grupal 1 Web
 1. MySQL Database table creation
 ```
 drop schema practica;
-drop user 'usuario_practica';estado
+drop user 'usuario_practica';
 create schema practica;
 
 create user 'usuario_practica'@'%' identified by 'la_Clave';
