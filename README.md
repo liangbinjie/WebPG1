@@ -55,7 +55,7 @@ th:field="*{objectAttribute}"
 implements Serializable
 private static final long serialVersionUID = 1L
 @Id
-@Generatedvalue(Strategy = GenerationType.IDENTITY)
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 Attributes, getters, setters, constructor
 
 2. Dao
